@@ -13,7 +13,7 @@ const AppBarPaid = () => {
         centerTitle={true}
         style={styles.appBar}
         leading={
-            <IconButton icon={ <Icon style={styles.icon} name="bars" size={23} color={'green'}/>}  />
+            <IconButton icon={ <Icon style={styles.icon} name="bars" size={23} color={'green'} />}  />
         }
         trailing={
             <IconButton icon={ <Icon color={'green'} name="bell" size={23}/>}/>

@@ -7,7 +7,7 @@ const image = { uri: "https://cdn2.vectorstock.com/i/1000x1000/67/51/icon-with-w
 const heightSc  = Dimensions.get("window").height;
 const widthSc  = Dimensions.get("window").width;
 
-const Home = () => {
+const HomesScreen = ({navigation, name}) => {
     return (
         <VStack style={{marginTop: 1, alignItems: "center", }}>
             <View style={{borderRadius: 20}}>
@@ -101,7 +101,7 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default HomesScreen;
 
 const styles = StyleSheet.create({
     appBar: {
