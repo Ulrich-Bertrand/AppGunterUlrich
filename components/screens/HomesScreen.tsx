@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Avatar, HStack, Stack, Text, VStack, Pressable} from "@react-native-material/core";
+import {Avatar, HStack, Stack, Text, VStack, Pressable, Button} from "@react-native-material/core";
 import {Image, StyleSheet, ImageBackground, View, Dimensions} from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -97,6 +97,9 @@ const HomesScreen = ({navigation, name}) => {
                     <Text style={styles.textServices}>Electricite</Text>
                 </Pressable>
             </HStack>
+
+
+            {/*<Button title="Settings" onPress={() =>{navigation.navigate("Settings")}}></Button>*/}
         </VStack>
     );
 }
