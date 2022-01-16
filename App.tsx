@@ -2,14 +2,17 @@ import * as React from "react";
 import {NavigationContainer} from "@react-navigation/native";
 import { createDrawerNavigator} from '@react-navigation/drawer';
 
+
 import {ProfileScreen, MessageScreen, ActivityScreen, ListScreen, ReportScreen, StatisticScreen,
     SignOutScreen, SettingScreen, MomentScreen,
+    // @ts-ignore
+    NativeCamera,
 } from "./components/constants/index";
 import  CustomButtonTab from './components/navigations/CustomBottomTab';
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import CustomDrawer from './components/navigations/CustomDrawer';
-import {Dimensions} from "react-native"; // navigation drawer
+import {Dimensions} from "react-native";
 
 const widthScreen = Dimensions.get("window").width;
 const Drawer = createDrawerNavigator();
@@ -37,6 +40,9 @@ const App =() =>{
         >
             <Drawer.Screen key={"Home"} name={"Home"} component={CustomButtonTab}
                options={{drawerIcon: ({color}) =>(<Ionicons name="home-sharp" size={22} color={'blue'}/>)}}
+            />
+            <Drawer.Screen key={"Camera"} name={"Camera"} component={NativeCamera}
+                options={{drawerIcon: ({color}) =>(<Ionicons name="camera-outline" size={22} color={'#E41B17'}/>)}}
             />
             <Drawer.Screen key={"Profile"} name={"Profile"} component={ProfileScreen}
                 options={{drawerIcon: ({color}) =>(<Ionicons name="person-sharp" size={22} color={'#56A5EC'}/>)}}

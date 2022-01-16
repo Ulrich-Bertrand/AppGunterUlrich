@@ -12,8 +12,77 @@ import { createStackNavigator } from "@react-navigation/stack";
 import {Button} from "@react-native-material/core";
 
 import CustomButtonTab from './components/screens/CustomButtonTab';
+import {BottomNavigation} from "react-native-paper";
 const Stacks = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
+const Tab = createBottomTabNavigator();
+
+
+const MusicRoute = () => <Text>Music s</Text>;
+
+const AlbumsRoute = () => <Text>Albums sd</Text>;
+
+const RecentsRoute = () => <Text>Recents fe</Text>;
+
+const ProfileRoute = () => <Text>Profiles Screen page </Text>;
+
+
+const AppZero = () => {
+
+    const [index, setIndex] = React.useState(0);
+
+    const [routes] = React.useState([
+        {key: 'music', title: 'Music', icon: 'music-box', color:"green"},
+        {key: 'albums', title: 'Albums', icon: 'album', color:"blue"},
+        {key: 'recent', title: 'Recent', icon: 'history', color:'indigo'},
+        {key: 'profil', title: 'profil', icon: 'face', color:'orange', badge:20, accessibilityLabel:'Profile user'},
+    ]);
+
+    const renderScene = BottomNavigation.SceneMap({
+        music: MusicRoute,
+        albums: AlbumsRoute,
+        recent: RecentsRoute,
+        profil: ProfileRoute,
+    });
+
+
+        return (
+        <NavigationContainer>
+            <BottomNavigation
+                navigationState={{ index, routes }}
+                onIndexChange={setIndex}
+                renderScene={renderScene}
+                shifting={true}
+                labeled={false}
+            />
+        </NavigationContainer>
+    );
+};
+
+export  default AppZero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const HomeScreenss = ({navigation}) =>{
     const styles = StyleSheet.create({
@@ -36,6 +105,8 @@ export const HomeScreenss = ({navigation}) =>{
 };
 
 export const SettingScreenss = ({navigation}) => {
+
+
     const styles = StyleSheet.create({
         center: {
             flex: 1,
@@ -67,17 +138,7 @@ export const ContactScreenss = ({navigation}) => {
     );
 }
 
-const Tab = createBottomTabNavigator();
 
-const AppZero = () => {
-    return (
-        <NavigationContainer>
-            <DrawerNavigator/>
-        </NavigationContainer>
-    );
-};
-
-export  default AppZero;
 
 
 export const MainStackNavigator = () => {

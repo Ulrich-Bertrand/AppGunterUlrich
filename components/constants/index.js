@@ -9,9 +9,11 @@ import ActivitysScreen from "../screens/ActivitysScreen";
 import ListsScreen from "../screens/ListsScreen";
 import StatisticsScreen from "../screens/StatisticsScreen";
 import SignOutsScreen from "../screens/SignOutsScreen";
+import NativesCamera from "../screens/camera/NativesCamera";
 
 
 export const HomeScreen = ({navigation}) => <HomesScreen navigation={navigation}/>
+export const NativeCamera = ({navigation}) => <NativesCamera navigation={navigation}/>
 export const ProfileScreen = ({navigation}) => <ProfilesScreen navigation={navigation}/>
 export const ActivityScreen = ({navigation}) => <ActivitysScreen navigation={navigation}/>
 export const ListScreen = ({navigation}) => <ListsScreen navigation={navigation} />
